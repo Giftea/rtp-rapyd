@@ -8,23 +8,7 @@ const TransferForm = ({ walletData }) => {
   const [loading, setLoading] = useState(false);
 
   // Function to handle fund transfer
-  const transferFunds = async (e) => {
-    e.preventDefault(); // Prevent page refresh on form submission
-    setLoading(true);
-
-    try {
-      // Send a POST request to initiate the transfer
-      await axios.post("http://localhost:4000/api/wallet/transfer", {
-        senderWalletId: walletData.id, // Sender's wallet ID from props
-        receiverWalletId: receiverWallet, // Recipient's wallet ID from state
-        amount: Number(amount), // Ensure the amount is sent as a number
-      });
-    } catch (error) {
-      console.error("Failed to transfer funds:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const transferFunds = async (e) => {};
 
   return (
     <div className="mt-4 bg-white p-4 rounded-md max-w-[500px]">

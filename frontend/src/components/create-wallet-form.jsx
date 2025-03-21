@@ -16,22 +16,7 @@ const CreateWalletForm = ({ fetchUser }) => {
   };
 
   // Create wallet
-  const createWallet = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    try {
-      const response = await axios.post(
-        "http://localhost:4000/api/wallet/create",
-        userData
-      );
-      localStorage.setItem("ewallet", response.data.wallet.id);
-      await fetchUser();
-    } catch (error) {
-      console.error("Failed to create wallet:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const createWallet = async (e) => {};
 
   return (
     <form
